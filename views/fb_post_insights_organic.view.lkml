@@ -23,8 +23,11 @@ view: fb_post_insights_organic {
     sql: ${TABLE}.created_time ;;
   }
 
-  dimension: date {
-    type: string
+  dimension_group: date {
+    type: time
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
+    datatype: date
     sql: ${TABLE}.date ;;
   }
 
