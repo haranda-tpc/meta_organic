@@ -1,28 +1,18 @@
-# The name of this view in Looker is "Pc Grl Fbpage Insights Organic S"
-view: page_insights {
-  # The sql_table_name parameter indicates the underlying database table
-  # to be used for all fields in this view.
+view: fb_page_insights_organic {
+
   sql_table_name: `meta.pc_grl_fb-page_insights_organic_s` ;;
   drill_fields: [page_id]
-
-  # This primary key is the unique key for this table in the underlying database.
-  # You need to define a primary key in a view in order to join to other views.
 
   dimension: page_id {
     primary_key: yes
     type: string
     sql: ${TABLE}.page_id ;;
   }
-    # Here's what a typical dimension looks like in LookML.
-    # A dimension is a groupable field that can be used to filter query results.
-    # This dimension will be called "Daily Follows" in Explore.
 
   dimension: daily_follows {
     type: number
     sql: ${TABLE}.daily_follows ;;
   }
-  # Dates and timestamps can be represented in Looker using a dimension group of type: time.
-  # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
   dimension_group: date {
     type: time
@@ -93,11 +83,6 @@ view: page_insights {
     type: number
     sql: ${TABLE}.posts_impressions_unique ;;
   }
-  measure: count {
-    type: count
-    drill_fields: [page_id, page_name]
-  }
-
 
   measure: daily_follows_sum {
     type: sum
