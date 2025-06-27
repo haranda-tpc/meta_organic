@@ -1,6 +1,12 @@
 view: ig_page_insights_organic {
   sql_table_name: `pr-mktg-analyt-prod.meta.pc_grl_ig-page-insights-organic-s` ;;
 
+  dimension: ig_id {
+    primary_key: yes
+    type: string
+    sql: ${TABLE}.ig_id ;;
+  }
+
   dimension_group: _partitiondate {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
@@ -25,10 +31,7 @@ view: ig_page_insights_organic {
     sql: ${TABLE}.date ;;
   }
 
-  dimension: ig_id {
-    type: string
-    sql: ${TABLE}.ig_id ;;
-  }
+
 
   dimension: page_name {
     type: string
