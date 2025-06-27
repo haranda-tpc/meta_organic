@@ -31,8 +31,6 @@ view: ig_page_insights_organic {
     sql: ${TABLE}.date ;;
   }
 
-
-
   dimension: page_name {
     type: string
     sql: ${TABLE}.page_name ;;
@@ -43,7 +41,7 @@ view: ig_page_insights_organic {
     sql: ${TABLE}.comments ;;
   }
 
-  measure: total_comments {
+  measure: comments_sum {
     type: sum
     sql: ${comments} ;;
   }
@@ -53,7 +51,7 @@ view: ig_page_insights_organic {
     sql: ${TABLE}.likes ;;
   }
 
-  measure: total_likes {
+  measure: likes_sum {
     type: sum
     sql: ${likes} ;;
   }
@@ -63,7 +61,7 @@ view: ig_page_insights_organic {
     sql: ${TABLE}.profile_views ;;
   }
 
-  measure: total_profile_views {
+  measure: profile_views_sum {
     type: sum
     sql: ${profile_views} ;;
   }
@@ -73,7 +71,7 @@ view: ig_page_insights_organic {
     sql: ${TABLE}.reach ;;
   }
 
-  measure: total_reach {
+  measure: reach_sum {
     type: sum
     sql: ${reach} ;;
   }
@@ -83,7 +81,7 @@ view: ig_page_insights_organic {
     sql: ${TABLE}.shares ;;
   }
 
-  measure: total_shares {
+  measure: shares_sum {
     type: sum
     sql: ${shares} ;;
   }
@@ -93,7 +91,7 @@ view: ig_page_insights_organic {
     sql: ${TABLE}.total_interactions ;;
   }
 
-  measure: total_total_interactions {
+  measure: total_interactions_sum {
     type: sum
     sql: ${total_interactions} ;;
   }
@@ -103,7 +101,7 @@ view: ig_page_insights_organic {
     sql: ${TABLE}.views ;;
   }
 
-  measure: total_views {
+  measure: views_sum {
     type: sum
     sql: ${views} ;;
   }
@@ -113,7 +111,7 @@ view: ig_page_insights_organic {
     sql: ${TABLE}.website_clicks ;;
   }
 
-  measure: total_website_clicks {
+  measure: website_clicks_sum {
     type: sum
     sql: ${website_clicks} ;;
   }
