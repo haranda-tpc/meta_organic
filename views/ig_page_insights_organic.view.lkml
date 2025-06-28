@@ -15,22 +15,6 @@ view: ig_page_insights_organic {
     sql: ${TABLE}._PARTITIONDATE ;;
   }
 
-  dimension_group: _partitiontime {
-    type: time
-    timeframes: [raw, date, week, month, quarter, year]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}._PARTITIONTIME ;;
-  }
-
-  dimension_group: date {
-    type: time
-    timeframes: [raw, date, week, month, quarter, year]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}.date ;;
-  }
-
   dimension: page_name {
     type: string
     sql: ${TABLE}.page_name ;;
