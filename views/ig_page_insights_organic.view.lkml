@@ -7,12 +7,12 @@ view: ig_page_insights_organic {
     sql: ${TABLE}.ig_id ;;
   }
 
-  dimension_group: _partitiondate {
+  dimension_group: date {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}._PARTITIONDATE ;;
+    sql: ${TABLE}.date ;;
   }
 
   dimension: page_name {
